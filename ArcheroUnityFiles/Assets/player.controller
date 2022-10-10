@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8143957997644729002, guid: bc62a75a74e7e894e90ff56a818bfcc0, type: 3}
-  bulletSpeed: 1000
+  bulletSpeed: 1650
+  bulletGroup: {fileID: 0}
 --- !u!1102 &-3264227152479816084
 AnimatorState:
   serializedVersion: 6
@@ -22,7 +23,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: reloading
-  m_Speed: 0.75
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 2914968783634491904}
@@ -49,7 +50,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: shooting
-  m_Speed: 1
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 7166163449537292389}
