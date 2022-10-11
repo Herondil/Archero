@@ -32,4 +32,10 @@ public class ShootBehaviour : StateMachineBehaviour
             b.transform.parent = bulletGroup;
         }
     }
+
+    public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        //invoquer le after shoot
+        GameObject.Find("RewardManager").GetComponent<RewardsEffects>().AfterAttack.Invoke();
+    }
 }

@@ -20,6 +20,8 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //evolution du Time
+
         if(Time.time > LastSpawn + TimeBetweenSpawns)
         {
             //on random le Vector2

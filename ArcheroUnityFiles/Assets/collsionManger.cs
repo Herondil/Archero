@@ -17,17 +17,17 @@ public class collsionManger : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "Player":
-                {
-                    Debug.Log("Game Over, hit FIRE1 to reload");
-                    Time.timeScale = 0;
-                    break;
-                }
+            {
+                Debug.Log("Game Over, hit FIRE1 to reload");
+                Time.timeScale = 0;
+                break;
+            }
             case "Bullets":
-                {
-                    Destroy(collision.collider.gameObject);
-                    _anim.SetTrigger("death");
-                    break;
-                }
+            {
+                Destroy(collision.collider.gameObject);
+                _anim.SetTrigger("death");
+                break;
+            }
         }
     }
 
@@ -35,7 +35,6 @@ public class collsionManger : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
-            Debug.Log("click");
             Time.timeScale = 1;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
