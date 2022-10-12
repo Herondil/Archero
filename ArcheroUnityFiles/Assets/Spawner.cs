@@ -5,7 +5,13 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public float TimeBetweenSpawns;
-    public AnimationCurve SpawnEvolution;
+
+    public AnimationCurve   SpawnEvolution;
+
+    //en secondes
+    public float GameDuration;  
+
+
     public BoxCollider2D[] zones;
     public GameObject EnnemyPrefab;
     public Transform EnnemyGroup;
@@ -20,7 +26,10 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //evolution du Time
+        //Calculer où on en est sur la durée de la partie
+        //calculer la valeur d'un pourcent, multiplier par le temps actuel
+        float x = (GameDuration*Time.timeSinceLevelLoad) / 100 ;
+        TimeBetweenSpawns = SpawnEvolution.Evaluate(x/100f);
 
         if(Time.time > LastSpawn + TimeBetweenSpawns)
         {

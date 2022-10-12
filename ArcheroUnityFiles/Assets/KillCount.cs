@@ -21,6 +21,12 @@ public class KillCount : ScriptableObject
             killcountTextGUI = killcountTextGameobjectInterface.GetComponent<TextMeshProUGUI>();
             killcountTextGUI.text = value.ToString();
             _killCount = value;
+
+            if(_killCount == 10)
+            {
+                Time.timeScale = 0;
+                GameObject.Find("UI").transform.Find("BonusPanel").gameObject.SetActive(true);
+            }
         }
     }
 
