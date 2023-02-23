@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class RewardsEffects : MonoBehaviour
+public sealed class RewardsEffects : MonoBehaviour
 {
     public UnityEvent AfterEnnemyDeath;
     public UnityEvent AfterAttack;
@@ -20,6 +20,36 @@ public class RewardsEffects : MonoBehaviour
 
     public GameObject OptionPanel;
 
+    //public AnimationCurve RewardsSteps;
+
+    //pointeur des méthodes "Add"
+    //public delegate void AddListener();
+    //Array des méthodes
+    public UnityAction[] Adders;
+
+
+    //Singleton pattern
+    private RewardsEffects() { }
+
+    //"auto-référence" vers l'unique instance, null de base
+    //static car au niveau de la classe entière
+    private static RewardsEffects _instance = null;
+
+    //Singleton comme Property, avec set
+    public static RewardsEffects instance
+    {
+        get
+        {
+            //deux cas possible, soit l'instance existe, soit non
+            if (_instance == null)
+            {
+                _instance = new RewardsEffects();
+                Debug.Log("Instanciation du reward Manager");
+            }
+            return _instance;
+        }
+    }
+
     public void AddBonusBulletWhenEnnemyDies()
     {
         AfterEnnemyDeath.AddListener(CreateBonusBullet);
@@ -30,6 +60,7 @@ public class RewardsEffects : MonoBehaviour
     public void AddExtraAttack()
     {
         AfterAttack.AddListener(DoubleAttack);
+
         Time.timeScale = 1;
         OptionPanel.SetActive(false);
     }
@@ -69,4 +100,6 @@ public class RewardsEffects : MonoBehaviour
             }
         }
     }
+
+
 }

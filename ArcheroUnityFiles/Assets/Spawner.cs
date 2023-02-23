@@ -17,12 +17,6 @@ public class Spawner : MonoBehaviour
     public Transform EnnemyGroup;
     private float LastSpawn;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {

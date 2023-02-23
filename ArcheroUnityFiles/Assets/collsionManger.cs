@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class collsionManger : MonoBehaviour
 {
     private Animator _anim;
+    public KillCount _kc;
 
     private void Awake()
     {
@@ -35,7 +36,8 @@ public class collsionManger : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
-            Time.timeScale = 1;
+            Time.timeScale  = 1;
+            _kc.killCount   = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
