@@ -26,16 +26,23 @@ public class ShootBehaviour : StateMachineBehaviour
 
         for (int i = 0; i < 4; i++)
         {
+            //créer le projectile
+            //placer le projectile
+            //addforce sur le projectile
+            //changer le parent pour "trier" la hiérarchie
             GameObject b = Object.Instantiate(bulletPrefab, animator.gameObject.transform);
             b.transform.localPosition = Vector2.zero;
             b.GetComponent<Rigidbody2D>().AddForce(directions[i] * bulletSpeed);
-            b.transform.parent = bulletGroup;
+            b.transform.parent = bulletGroup; //facultative
         }
     }
 
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         //invoquer le after shoot
+
+        //ici c'est maintenant que l'évèvement se produit
+
         GameObject.Find("RewardManager").GetComponent<RewardsEffects>().AfterAttack.Invoke();
     }
 }

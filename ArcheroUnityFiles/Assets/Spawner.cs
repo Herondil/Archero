@@ -6,9 +6,10 @@ public class Spawner : MonoBehaviour
 {
     public float TimeBetweenSpawns;
 
+
     public AnimationCurve   SpawnEvolution;
 
-    //en secondes
+    //en secondes, la durée maximum de la partie, à partir de laquelle on atteint le max d'ennemis générés
     public float GameDuration;  
 
 
@@ -22,6 +23,8 @@ public class Spawner : MonoBehaviour
     {
         //Calculer où on en est sur la durée de la partie
         //calculer la valeur d'un pourcent, multiplier par le temps actuel
+        
+        // x représente un centième de la durée de la partie
         float x = (GameDuration*Time.timeSinceLevelLoad) / 100 ;
         TimeBetweenSpawns = SpawnEvolution.Evaluate(x/100f);
 

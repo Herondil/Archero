@@ -20,42 +20,24 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.05
+      value: 2
       inSlope: 0
-      outSlope: 31.160553
-      tangentMode: 1
+      outSlope: 9.8
+      tangentMode: 65
       weightedMode: 2
       inWeight: 0.33333334
-      outWeight: 0.27243125
+      outWeight: 0.33492297
     - serializedVersion: 3
-      time: 0.27011544
-      value: 4.1361637
-      inSlope: 26.776882
-      outSlope: 26.7356
-      tangentMode: 1
-      weightedMode: 3
-      inWeight: 0.5123923
-      outWeight: 0.39144844
-    - serializedVersion: 3
-      time: 0.65167326
-      value: 5.2304964
-      inSlope: -14.397476
-      outSlope: -21.89805
-      tangentMode: 1
-      weightedMode: 3
-      inWeight: 0.35497522
-      outWeight: 0.23837785
-    - serializedVersion: 3
-      time: 1
-      value: 10
-      inSlope: 157.76788
+      time: 10
+      value: 100
+      inSlope: 9.8
       outSlope: 49.354153
-      tangentMode: 1
+      tangentMode: 5
       weightedMode: 1
-      inWeight: 0.07643493
+      inWeight: 0.51776016
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  RewardsCounter: 4
-  RefFound: 1
+  RewardsCounter: 0
+  RefFound: 0

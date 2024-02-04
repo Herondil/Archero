@@ -18,9 +18,8 @@ public class deathBehaviour : StateMachineBehaviour
         RewardsEffects r = GameObject.Find("RewardManager").GetComponent<RewardsEffects>();
         r.bonusBulletPos = animator.gameObject.transform.position;
 
-
+        //événement de la mort de l'ennemi
         r.AfterEnnemyDeath.Invoke();
-
 
         Destroy(animator.gameObject);
         _kc.killCount++;

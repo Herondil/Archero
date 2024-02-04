@@ -15,6 +15,7 @@ public class collsionManger : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //on peut aussi utiliser "CompareTag"
         switch (collision.gameObject.tag)
         {
             case "Player":
@@ -34,6 +35,7 @@ public class collsionManger : MonoBehaviour
 
     private void Update()
     {
+        //Relancer le jeu
         if (Input.GetButton("Fire1"))
         {
             Time.timeScale  = 1;

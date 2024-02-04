@@ -5,8 +5,15 @@ using UnityEngine.Events;
 
 public sealed class RewardsEffects : MonoBehaviour
 {
+
+    /*******/
+
     public UnityEvent AfterEnnemyDeath;
     public UnityEvent AfterAttack;
+
+
+    /*******/
+
 
     //information de la bullet bonus
     public Vector3 bonusBulletPos;
@@ -25,7 +32,7 @@ public sealed class RewardsEffects : MonoBehaviour
     //pointeur des méthodes "Add"
     //public delegate void AddListener();
     //Array des méthodes
-    public UnityAction[] Adders;
+    //public UnityAction[] Adders;
 
 
     //Singleton pattern
@@ -50,21 +57,27 @@ public sealed class RewardsEffects : MonoBehaviour
         }
     }
 
+    //méthode pour le bouton de gauche
     public void AddBonusBulletWhenEnnemyDies()
     {
         AfterEnnemyDeath.AddListener(CreateBonusBullet);
+        //AfterEnnemyDeath += CreateBonusBullet;
+
+
         Time.timeScale = 1;
         OptionPanel.SetActive(false);
     }
 
+    //méthode pour le bouton de droite
     public void AddExtraAttack()
     {
         AfterAttack.AddListener(DoubleAttack);
-
         Time.timeScale = 1;
         OptionPanel.SetActive(false);
     }
 
+
+    //Méthode pour créer le tir à la mort d'un ennemi
     void CreateBonusBullet()
     {
         //instanciation d'une bullet
